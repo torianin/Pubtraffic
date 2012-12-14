@@ -5,4 +5,36 @@
     %link{ :href => "style.css", :media => "screen", :rel => "stylesheet" }
     %script{:type => "text/javascript", :src  => "app.js"}
   %body
-    %h2= "Pubtraffic"
+    #container
+      #logo
+        %img(src="/images/logo.png")
+      #nav  
+        %ol  
+          %li Sortuj według:
+          %a(href="/")  
+            %li Odległość  
+          %a(href="about")  
+            %li Liczba osób  
+          %a(href="about")  
+            %li Puby alfabetycznie 
+      #pubs  
+        %ol  
+          %li
+            %h1 Pub1
+            %h2 Opis pub1
+            %a(href="/")  
+            %img(src="/images/1.jpg")
+          %li
+            %h1 Pub2
+            %a(href="/")  
+            %img(src="/images/2.jpg")
+          %li
+            %h1 Pub3
+            %a(href="/")  
+            %img(src="/images/3.jpg")
+          %li
+            %h1 Pub4
+            %a(href="/")  
+            %img(src="/images/4.jpg")
+      #footer
+        %p This is the footer.

@@ -1,8 +1,7 @@
 require 'sinatra'
 require 'haml'
 require 'coffee-script'
-
-set :haml, :format => :html5
+require 'sass'
 
 get '/' do
   haml :index
@@ -10,4 +9,8 @@ end
 
 get '/app.js' do
   coffee :app
+end
+
+get '/style.css' do
+   sass :stylesheet, :style => :expanded
 end
