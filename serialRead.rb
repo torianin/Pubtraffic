@@ -7,7 +7,7 @@ Pusher.key = '3da8282fe36a89d40595'
 Pusher.secret = '13c7e7b331727ba51b93'
 
 while true
-	ser = SerialPort.new("/dev/tty.usbmodem1a111", 9600, 8, 1, SerialPort::NONE)
+	ser = SerialPort.new("/dev/tty.usbmodem1d121", 9600, 8, 1, SerialPort::NONE)
 	myStr = ser.readline(200)	
 	puts myStr
 	Pusher['my-channel'].trigger('my-event', {:message => "#{myStr}"})
