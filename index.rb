@@ -1,4 +1,5 @@
 #-*- coding: utf-8 -*-
+
 require 'sinatra'
 require 'haml'
 require 'coffee-script'
@@ -7,11 +8,19 @@ require 'data_mapper'
 
 DataMapper.setup(:default, 'postgres://localhost/pubtraffic')
 
+class Pub
+  include DataMapper::Resource
+  property :id, Serial, :key => true
+  property :name, String
+  property :users, String
+end
+
 class User
   include DataMapper::Resource
   property :nick, String
   property :card, String, :key => true
   property :email, String
+  property :friends, String
 end
 
 DataMapper.auto_migrate!
@@ -43,8 +52,6 @@ get '/' do
   end
   haml :index
 end
-
-
 
 get '/app.js' do
   coffee :app
