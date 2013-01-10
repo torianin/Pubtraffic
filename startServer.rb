@@ -4,17 +4,9 @@ require 'sinatra'
 require 'haml'
 require 'coffee-script'
 require 'sass'
-require 'dataMapper'
+require '/Users/Robert/Documents/Pubtraffic/dataMapper'
 
 get '/' do
-  myfile = File.open("users.txt")
-  card = myfile.readline(12)
-  p3 = User.get(card)
-  if(p3 != nil)
-  	@user = p3.nick
-  else
-  	@user = 'Brak użytkownika w bazie'
-  end
   haml :index
 end
 

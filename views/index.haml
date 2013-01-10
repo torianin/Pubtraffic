@@ -10,13 +10,17 @@
     %script{:type => "text/javascript", :src  => "app.js"}
     %script{:src => "//use.typekit.net/rpw0kpz.js", :type => "text/javascript"}
     :javascript
-      try{Typekit.load();}catch(e){}
+      try{
+      Typekit.load();
+      }
+      catch(e){}
     :javascript
       var button = 0;
       var toDelete = 0;
       var map;
       var allMarkers = [];
       var infoWindow;
+
 
       function check(button) 
       {
@@ -67,7 +71,7 @@
       }
   %body{:onload => "initialize()"}
     #navigation
-      %a== Ostatnio wszedl do pubu #{@user}
+      %a{:id => "notification"} Ostatnio wszedl do pubu 
     #container
       #logo
         %img(src="/images/logo.png")
