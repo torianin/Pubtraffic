@@ -14,7 +14,11 @@ get '/app.js' do
   coffee :app
 end
 
-get '/style.css' do
+get '/contact' do
+	haml :contact
+end
+
+get '/css/style.css' do
    sass :stylesheet, :style => :expanded
 end
 

@@ -1,113 +1,30 @@
-!!!
-%html
-  %head
-    %title= "Pubtraffic"
-    %meta{ :charset => "UTF-8" }
-    %link{ :href => "style.css", :media => "screen", :rel => "stylesheet" }
-    %script{:type => "text/javascript", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyA3zeZ1jGql_896zfjBWWE8gA_8CEtw00U&sensor=true" }
-    %script{:type => "text/javascript", :src  => "http://js.pusher.com/1.12/pusher.min.js"}
-    %script{:type => "text/javascript", :src  => "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
-    %script{:type => "text/javascript", :src  => "app.js"}
-    %script{:src => "//use.typekit.net/rpw0kpz.js", :type => "text/javascript"}
-    :javascript
-      try{
-      Typekit.load();
-      }
-      catch(e){}
-    :javascript
-      var button = 0;
-      var toDelete = 0;
-      var map;
-      var allMarkers = [];
-      var infoWindow;
+#nav{:class => "sixteen columns"}
+  %ol  
+    %li Sortuj według:
+    %a(href="/")  
+      %li Odległość  
+    %a(href="contact")  
+      %li Liczba osób  
+    %a(href="about")  
+      %li Puby alfabetycznie 
+  #clear{:class => "clearfix"}
 
+#map{:class => "sixteen columns"}
+  #map_canvas{:style => "width:500px; height:200px;"}
+  %ol
+  %button{:onclick => "show()"} Pokaż
+  %button{:onclick => "usun()"} Usuń
+  #clear{:class => "clearfix"}
 
-      function check(button) 
-      {
-        toDelete = button.id;
-      }; 
-
-      function show() 
-      {
-        infoWindow.open(map,allMarkers[toDelete-1]);
-      }; 
-      
-      function usun() 
-      {
-        allMarkers[toDelete-1].setVisible(false);
-        infoWindow.close();
-        $('#' + (toDelete)).remove();
-      }; 
-
-      function initialize() {
-
-        var mapOptions = {
-          center: new google.maps.LatLng(51.106540, 17.038396),
-          zoom: 13,
-          mapTypeId: google.maps.MapTypeId.TERRAIN,
-          disableDoubleClickZoom: true,
-        };
-        map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-
-        infoWindow = new google.maps.InfoWindow({
-          content: "To tutaj"
-        });
-
-        google.maps.event.addListener(map, "dblclick", function(event) {
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-            var markerLatLng = new google.maps.LatLng(lat, lng);
-            var marker = new google.maps.Marker({
-              position: markerLatLng, 
-              map: map, 
-            });   
-            allMarkers.push(marker);
-            // populate yor box/field with lat, lng
-            button = button + 1;
-            $("#map ol").append($("<button id=\""+button+"\" value=\""+lat + "," + lng +"\" onclick=\"check(this)\"></button>").html(lat + "," + lng ));
-            alert("Lat=" + lat + "; Lng=" + lng + button);
-        });
-      }
-  %body{:onload => "initialize()"}
-    #navigation
-      %a{:id => "notification"} Ostatnio wszedl do pubu 
-    #container
-      #logo
-        %img(src="/images/logo.png")
-      #nav  
-        %ol  
-          %li Sortuj według:
-          %a(href="/")  
-            %li Odległość  
-          %a(href="about")  
-            %li Liczba osób  
-          %a(href="about")  
-            %li Puby alfabetycznie 
-      #map
-        #map_canvas{:style => "width:500px; height:200px;"}
-        %ol
-        %button{:onclick => "show()"} Pokaż
-        %button{:onclick => "usun()"} Usuń
-
-      #pubs  
-        %ol  
-          %li
-            %h1 Pub1
-            %h2 Opis pub1
-            %a(href="/")  
-            %img(src="/images/1.jpg")
-          %li
-            %h1 Pub2
-            %a(href="/")  
-            %img(src="/images/2.jpg")
-          %li
-            %h1 Pub3
-            %a(href="/")  
-            %img(src="/images/3.jpg")
-          %li
-            %h1 Pub4
-            %a(href="/")  
-            %img(src="/images/4.jpg")
-      #footer
-        %p This is the footer.
+#pubs
+  #pub1{:class => "eight columns"} 
+    %h1 Pub1
+    %h2 Opis pub1
+    %a(href="/")  
+    %img(src="/images/1.jpg")
+  #pub2{:class => "eight columns"} 
+    %h1 Pub1
+    %h2 Opis pub1
+    %a(href="/")  
+    %img(src="/images/1.jpg")
+  #clear{:class => "clearfix"}
