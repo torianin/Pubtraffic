@@ -4,7 +4,6 @@ require 'sinatra'
 require 'haml'
 require 'coffee-script'
 require 'sass'
-require '/Users/Robert/Documents/Pubtraffic/dataMapper'
 
 get '/' do
   haml :index

@@ -1,4 +1,4 @@
-#nav{:class => "sixteen columns"}
+#nav.row.sixteen.columns
   %ol  
     %li Sortuj według:
     %a(href="/")  
@@ -9,22 +9,34 @@
       %li Puby alfabetycznie 
   #clear{:class => "clearfix"}
 
-#map{:class => "sixteen columns"}
+#map.row.sixteen.columns
   #map_canvas{:style => "width:500px; height:200px;"}
   %ol
   %button{:onclick => "show()"} Pokaż
   %button{:onclick => "usun()"} Usuń
   #clear{:class => "clearfix"}
 
-#pubs
-  #pub1{:class => "eight columns"} 
+#pubs.row
+  #pub1.pubs.seven.columns.row
+    %img(src="/images/1.jpg")
     %h1 Pub1
     %h2 Opis pub1
     %a(href="/")  
+  #pub2.pubs.seven.columns
     %img(src="/images/1.jpg")
-  #pub2{:class => "eight columns"} 
     %h1 Pub1
     %h2 Opis pub1
     %a(href="/")  
+  #clear.clearfix
+  #pub1.pubs.seven.columns.row
     %img(src="/images/1.jpg")
-  #clear{:class => "clearfix"}
+    %h1 Pub1
+    %h2 Opis pub1
+    %a(href="/")  
+  #pub2.pubs.seven.columns
+    %img(src="/images/1.jpg")
+    %h1 Pub1
+    %h2 Opis pub1
+    %a(href="/")  
+
+  #clear.clearfix
