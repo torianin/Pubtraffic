@@ -7,3 +7,4 @@ class Main
       $('#notification').html(data.message)
       document.title = data.message;
 new Main().test()
+

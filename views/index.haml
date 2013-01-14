@@ -1,14 +1,17 @@
 #nav.row.fourteen.columns
-  %img(src="/images/small-logo.png")
+  %a{:href => "/#"} 
+    %img{:src=> "/images/small-logo.png" }
   %ol  
-    %a(href="contact")  
-      %li Liczba osób  
-    %a(href="contact")  
-      %li Liczba osób  
-    %a(href="about")  
-      %li Puby alfabetycznie 
-    %li Sortuj według:
+    %li.two.columns SORTUJ:
+    %a(href="#/osoby")  
+      %li.two.columns OSOBY
+    %a(href="#/odleglosc")  
+      %li.two.columns ODLEGŁOŚĆ 
+    %a(href="#/alfabetycznie")  
+      %li.two.columns ALFABETYCZNIE 
   #clear{:class => "clearfix"}
+
+
 #sidebar
   #title Ostatnie wydarzenia
   #last
@@ -20,28 +23,5 @@
   #clear{:class => "clearfix"}
 
 #pubs.row
-  #pub1.pubs.seven.columns.row
-    %img(src="/images/1.jpg")
-    %h1 Pub1
-    %h2 Opis pub1
-    %a(href="/")  
-  #pub2.pubs.seven.columns
-    %img(src="/images/1.jpg")
-    %h1 Pub1
-    %h2 Opis pub1
-    %a(href="/")  
-  #sidebar
-  #clear.clearfix
-  #pub1.pubs.seven.columns.row
-    %img(src="/images/1.jpg")
-    %h1 Pub1
-    %h2 Opis pub1
-    %a(href="/")  
-  #pub2.pubs.seven.columns
-    %img(src="/images/1.jpg")
-    %h1 Pub1
-    %h2 Opis pub1
-    %a(href="/")  
-
   #clear.clearfix
 
