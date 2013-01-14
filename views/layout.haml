@@ -19,13 +19,9 @@
   %body{:onload => "initialize()"}
     #navigation
       %a{:id => "notification"}
-    #sidebar
-      %a{:id => "sidebar"} Ostatnie wydarzenia
-      %br
+    #clear{:class => "clearfix"}
     #container{:class => "container"}
-      #logo{:class => "sixteen columns"}
-        %img(src="/images/logo.png")
       #content  
         =yield
-      #footer
-        %p This is the footer.
+    #footer
+      %p This is the footer.

@@ -6,23 +6,19 @@ $light_green: #00C400
 $background_grey: #9ea0a3
 
 body
-  background-color: #FFFFFF
+  background: transparent url(/images/background_image.png) repeat 0 0
 
 #navigation
   position: fixed
   top: 0
   width: 100%
   color: #ffffff
-  height: 35px
+  height: 20px
   text-align: center
-  padding-top: 15px
-
-  -webkit-box-shadow: 0px 0px 8px 0px #000000
-  -moz-box-shadow: 0px 0px 8px 0px #000000
-  box-shadow: 0px 0px 8px 0px #000000
-
-  background-color: rgba(1, 1, 1, 0.75)
-  color: rgba(1, 1, 1, 0.75)
+  padding-top: 10px
+  padding-bottom: 10px
+  background-color: rgba(0.81, 0.05, 1, 0.50)
+  z-index: 2
 
   a
     font-size: 14px
@@ -33,38 +29,10 @@ body
     &:hover
       color: grey
 
-#sidebar
-  position: fixed
-  top: 50px
-  right: 0px
-  color: #ffffff
-  height: 1000px
-  width: 200px
-  text-align: center
-  padding-top: 15px
-
-  background-color: rgba(1, 1, 1, 0.10)
-  color: rgba(1, 1, 1, 1)
-
-  overflow: scroll
-
-  a
-    font-size: 14px
-
-    color: black
-    text-decoration: none
-    &:hover
-      color: grey
-
-#logo
-  border-bottom-width: 1px
-  border-bottom-style: solid
-  padding-top: 70px
-  border-color: $green
-
 #nav
+  padding-top: 50px
   color: $light_green
-  font-size: 20px
+  font-size: 15px
   border-bottom-width: 1px
   border-bottom-style: solid
   border-color: $green
@@ -72,9 +40,33 @@ body
 #nav ol 
   list-style-type: none
 
-#nav ol li
-  padding-right: 40px
+#nav img 
   float: left
+
+#nav li
+  padding-top: 8px
+  padding-left: 40px
+  float: right
+
+#sidebar
+  position: absolute
+  right: 0
+  width: 100px
+  padding-top: 50px
+  text-align: center
+  float: right
+  font-size: 14px
+  height: 720px
+  overflow: hidden
+
+#last
+  padding-top: 10px
+
+#sidebar hr  
+  border-top-width: 1px
+  border-top-style: solid
+  border-color: $green
+  margin: 10px
 
 #map
   color: $light_green
@@ -82,7 +74,7 @@ body
   border-bottom-width: 1px
   border-bottom-style: solid
   border-color: $green
-  width: 100%
+  padding-bottom: 20px
 
 #map_canvas 
   float: left
@@ -114,7 +106,7 @@ body
     float: left
     clear: left
   h1
-    color: $green
+    color: #000000
     float: left
     clear: left
   h2
@@ -124,11 +116,21 @@ body
 
 
 #footer
-  padding:
-    top: 10px
-    left: 20px
-    right: 20px
-  width: 960px
   position: fixed
   bottom: 0
-  background-color: $background_grey
+  width: 100%
+  color: #ffffff
+  height: 20px
+  text-align: center
+  padding-top: 10px
+  padding-bottom: 10px
+  background-color: rgba(0.81, 0.05, 1, 0.50)
+
+  a
+    font-size: 14px
+    padding-left: 15px
+    padding-right: 15px
+    color: white
+    text-decoration: none
+    &:hover
+      color: grey

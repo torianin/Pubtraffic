@@ -1,15 +1,18 @@
-#nav.row.sixteen.columns
+#nav.row.fourteen.columns
+  %img(src="/images/small-logo.png")
   %ol  
-    %li Sortuj według:
-    %a(href="/")  
-      %li Odległość  
+    %a(href="contact")  
+      %li Liczba osób  
     %a(href="contact")  
       %li Liczba osób  
     %a(href="about")  
       %li Puby alfabetycznie 
+    %li Sortuj według:
   #clear{:class => "clearfix"}
-
-#map.row.sixteen.columns
+#sidebar
+  #title Ostatnie wydarzenia
+  #last
+#map.row.fourteen.columns
   #map_canvas{:style => "width:500px; height:200px;"}
   %ol
   %button{:onclick => "show()"} Pokaż
@@ -27,6 +30,7 @@
     %h1 Pub1
     %h2 Opis pub1
     %a(href="/")  
+  #sidebar
   #clear.clearfix
   #pub1.pubs.seven.columns.row
     %img(src="/images/1.jpg")
@@ -40,3 +44,4 @@
     %a(href="/")  
 
   #clear.clearfix
+

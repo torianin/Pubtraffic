@@ -5,7 +5,8 @@ require 'data_mapper'
 require 'serialport'
 require 'pusher'
 require 'dm-postgres-adapter'
- 
+require 'gtk2'
+
 Pusher.app_id = '33866'
 Pusher.key = '3da8282fe36a89d40595'
 Pusher.secret = '13c7e7b331727ba51b93'
@@ -60,7 +61,7 @@ u.save
 
 u = User.new
   u.attributes = {
-  :id => '2',
+  :id => '3',
   :nick => 'Szymon',
   :gender => 'male',
   :card => '010031565C3A',
@@ -88,7 +89,29 @@ p = Pub.new
   :max => '10'
 }
 p.save
- 
+
+
+
+class RubyApp < Gtk::Window
+
+    def initialize
+        super
+    
+        set_title "Center"
+        signal_connect "destroy" do 
+            Gtk.main_quit 
+        end
+
+        set_default_size 250, 200
+        set_window_position Gtk::Window::POS_CENTER
+        
+        show
+    end
+end
+
+Gtk.init
+    window = RubyApp.new
+Gtk.main
 # Odczytywanie przy?o?onej karty
 sp = SerialPort.new "/dev/tty.usbmodem1d121", 9600
 while true     
